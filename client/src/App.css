@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.428571429;
+    color: #4D5592;
+    background-color: #f3f4f7;
+    height:100%;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+     -ms-user-select: none;
+         user-select: none;
+}
+#content{height:100%}
+.side-drawer.open {
+    transform: translateX(0);
+  }
+  .small{
+      font-size: 12px;
+  }
+
+  .light {
+    color: #9ca3a8;
+}
+.weight-600 {
+    font-weight: 600;
+}
+.dark {
+    color: #435b71;
+}
+.medium-margin-bottom {
+    margin-bottom: 20px;
+}
+ul{list-style-type:none;padding:0;margin:0}
+.result-container {
+    height: calc(100vh - 68px);
+}

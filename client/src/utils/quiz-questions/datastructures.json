@@ -1,0 +1,93 @@
+[
+    {
+        "question": "In a min-heap:",
+        "answers": [
+            "parent nodes have values greater than or equal to their childs",
+            "parent nodes have values less than or equal to their childs",
+            "both statements are true",
+            "both statements are wrong"
+        ],
+        "correct":"parent nodes have values greater than or equal to their childs"
+    },
+    {
+        "question": "The minimum number of edges required to create a cyclid graph of n vertices is",
+        "answers": [
+            "A - n",
+            "B - n - 1",
+            "C - n + 1",
+            "D - 2n"
+        ],
+        "correct":"A - n"
+    },
+    {
+        "question": "In context with time-complexity, find the odd out −",
+        "answers": [
+            "Deletion from Linked List.",
+            "Searching in Hash Table",
+            "Adding edge in Adjacency Matrix",
+            "Heapify a Binary Heap"
+        ],
+        "correct":"Heapify a Binary Heap"
+    },
+    {
+        "question": "Which of the following algorithm cannot be desiged without recursion −",
+        "answers": [
+            "Tower of Hanoi",
+            "Fibonacci Series",
+            "Tree Traversal",
+            "None of the above"
+        ],
+        "correct":"None of the above"
+    },
+
+    {
+        "question": "In doubly linked lists",
+        "answers": [
+            "a pointer is maintained to store both next and previous nodes.",
+            "two pointers are maintained to store next and previous nodes.",
+            "a pointer to self is maintained for each node.",
+            "None of the above"
+        ],
+        "correct":"two pointers are maintained to store next and previous nodes."
+    },
+    {
+        "question": "From a complete graph, by removing maximum _______________ edges, we can construct a spanning tree.",
+        "answers": [
+            "e-n+1",
+            "n-e+1",
+            "n+e-1",
+            "e-n-1"
+        ],
+        "correct":"e-n+1"
+    },
+    {
+        "question": "O(1) means computing time is __________________",
+        "answers": [
+            "Constant",
+            "Quadratic",
+            "Linear",
+            "Cubic"
+        ],
+        "correct":"Constant"
+    },
+    {
+        "question": "What is the worst case run-time complexity of binary search algorithm?",
+        "answers": [
+            "Ο(n2)",
+            "Ο(nlog n)",
+            "Ο(n3)",
+            "Ο(n)"
+        ],
+        "correct":"Ο(n)"
+    },
+    {
+        "question": "What is a memory efficient double linked list?",
+        "answers": [
+            "Each node has only one pointer to traverse the list back and forth",
+            "The list has breakpoints for faster traversal",
+            "An auxiliary singly linked list acts as a helper list to traverse through the doubly linked list",
+            "A doubly linked list that uses bitwise AND operator for storing addresses"
+        ],
+        "correct":"Each node has only one pointer to traverse the list back and forth"
+    }
+]

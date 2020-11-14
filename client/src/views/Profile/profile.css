@@ -1,0 +1,17 @@
+i.fa.fa-star.fa-lg {
+    color: gold;
+    margin-right: 6px;
+}
+i.fa.fa-heart-o.fa-lg {
+    color: red;
+    margin-right: 6px;
+}
+.dYDQIE .nav-tabs .nav-item.show .nav-link, .dYDQIE .nav-tabs .nav-link.active {
+    color: rgba(0,0,0,0.84);
+    background-color: #fff;
+    border-color: #fff;
+}
+.tab-content {
+    background: #fff;
+    padding: 1em;
+}

@@ -1,0 +1,31 @@
+.upload-container {
+    padding-top: 40px;
+}
+.upload-title{
+    font-weight: 700;
+    margin-top: 41px;
+    margin-bottom: 20px;
+    font-size: 47px;
+}
+.upload-container h4 {
+    margin-top:30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.upload-form{
+    border-radius: 20px;
+    background-color: #fff;
+    width: 100%;
+    transition: all .2s ease-out;
+    box-shadow: 0 2px 43px -4px rgba(0,0,0,.19);
+    padding: 25px 40px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    position: relative;
+}
+.uploadtopic .form-inline select {width:48%}
+.toast.show {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+}

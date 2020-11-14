@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is ReactJS?",
+        "answers": [
+            "A Library",
+            "A Framework",
+            "A Module"
+        ],
+        "correct":"A Library"
+    },
+    {
+        "question": "Which Company developed React",
+        "answers": [
+            "Microsoft",
+            "Facebook",
+            "Google"
+        ],
+        "correct":"Facebook"
+    },
+    {
+        "question": "What are Hooks?",
+        "answers": [
+            "Hooks are API with which you can directly use it in functional components",
+            "Hooks can be used in class components only",
+            "Hooks can be used in functional as well as class components"
+        ],
+        "correct":"Hooks are API with which you can directly use it in functional components"
+    },
+    {
+        "question": "What are Pure Components",
+        "answers": [
+            "Pure Components which have their own local state and doesnt re-render if same props or state changes",
+            "Pure components can share state between other components",
+            "Pure components are relative to each other"
+        ],
+        "correct":"Pure Components which have their own local state and doesnt re-render if same props or state changes"
+    }
+]
