@@ -1,1 +1,101 @@
-[]
+[
+    {
+        "question": "Which type of JavaScript language is ___",
+        "answers": [
+            "Object-Oriented",
+            "Object-Based",
+            "Assembly-language",
+            "High-level"
+        ],
+        "correct":"Object-Based"
+    },
+    {
+        "question": "Which one of the following also known as Conditional Expression:",
+        "answers": [
+            "Alternative to if-else",
+            "Switch statement",
+            "If-then-else statement",
+            "immediate if"
+        ],
+        "correct":"immediate if"
+    },
+    {
+        "question": "In JavaScript, what is a block of statement?",
+        "answers": [
+            "Conditional block",
+            "block that combines a number of statements into a single compound statement",
+            "both conditional block and a single statement",
+            "block that contains a single statement"
+        ],
+        "correct":"block that combines a number of statements into a single compound statement"
+    },
+    {
+        "question": " When interpreter encounters an empty statements, what it will do:",
+        "answers": [
+            "Shows a warning",
+            "Prompts to complete the statement",
+            "Throws an error",
+            "Ignores the statements"
+        ],
+        "correct":"Ignores the statements"
+    },
+
+    {
+        "question": "The 'function' and 'var' are known as:",
+        "answers": [
+            "Keywords",
+            "Data types",
+            "Declaration statements",
+            "Prototypes"
+        ],
+        "correct":"Declaration statements"
+    },
+    {
+        "question": "Which of the following variables takes precedence over the others if the names are the same?",
+        "answers": [
+            "Global variable",
+            "The local element",
+            "The two of the above",
+            "None of the above"
+        ],
+        "correct":"The local element"
+    },
+    {
+        "question": "Which one of the following is the correct way for calling the JavaScript code?",
+        "answers": [
+            "Preprocessor",
+            "Triggering Event",
+            "RMI",
+            "Function/Method"
+        ],
+        "correct":"Function/Method"
+    },
+    {
+        "question": "The accesskey attribute specifies a keyboard navigation accelerator for the element.",
+        "answers": [
+            "True",
+            "False"
+        ],
+        "correct":"True"
+    },
+    {
+        "question": "Which one of the following operator is used to check weather a specific property exists or not:",
+        "answers": [
+            "Exists",
+            "exist",
+            "within",
+            "in"
+        ],
+        "correct":"in"
+    },
+    {
+        "question": "An expression that can legally appear on the left side of an assignment expression. is a well known explanation for variables, properties of objects, and elements of arrays. They are called_____.",
+        "answers": [
+            "Properties",
+            "Prototypes",
+            "Definition",
+            "Lvalue"
+        ],
+        "correct":"Lvalue"
+    }
+]

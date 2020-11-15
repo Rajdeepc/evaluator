@@ -1,0 +1,93 @@
+[
+    {
+        "question": "Which of the following selector selects the elements that are checked?",
+        "answers": [
+            "E ~ F",
+            "::after",
+            ":checked",
+            "none of the mentioned"
+        ],
+        "correct":":checked"
+    },
+    {
+        "question": "Which of the following selector selects the elements that are the default among a set of similar elements?",
+        "answers": [
+            ":default",
+            ":%",
+            ":disabled",
+            "none of the mentioned"
+        ],
+        "correct":":default"
+    },
+    {
+        "question": "Which of the following selector selects an element that has no children?",
+        "answers": [
+            ":empty",
+            ":nochild",
+            ":inheritance",
+            ":no-child"
+        ],
+        "correct":"style"
+    },
+    {
+        "question": "Which of the following selector selects the element that is the first child of its parent that is of its type?",
+        "answers": [
+            ":first-of-type",
+            ":last-child",
+            "::first-line",
+            "::first-letter"
+        ],
+        "correct":":first-of-type"
+    },
+
+    {
+        "question": "Which of the following selector selects all elements of E that have the attribute attr that end with the given value?",
+        "answers": [
+            "E[attr^=value]",
+            "E[attr$=value]",
+            "E[attr*=value]",
+            "None of the above"
+        ],
+        "correct":"E[attr$=value]"
+    },
+    {
+        "question": "Which of the following selector selects elements that do not match the selector s?",
+        "answers": [
+            ":!(s)",
+            ":nth-child(s)",
+            ":not(s)",
+            "none of the mentioned"
+        ],
+        "correct":":not(s)"
+    },
+    {
+        "question": "Which of the following selector selects an element if it’s the only child of its parent?",
+        "answers": [
+            ":root",
+            ":nth-oftype(n)",
+            ":only-child",
+            "none of the mentioned"
+        ],
+        "correct":":only-child"
+    },
+    {
+        "question": "What is the worst case run-time complexity of binary search algorithm?",
+        "answers": [
+            "Ο(n2)",
+            "Ο(nlog n)",
+            "Ο(n3)",
+            "Ο(n)"
+        ],
+        "correct":"Ο(n)"
+    },
+    {
+        "question": "Which of the following selector applies styles to elements that are valid per HTML5 validations set either with the pattern or type attributes?",
+        "answers": [
+            ":valid",
+            ":required",
+            ":optional",
+            ":invalid"
+        ],
+        "correct":":valid"
+    }
+]

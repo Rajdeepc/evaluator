@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AnswerOption from "./AnswerOption";
 import Question from "./Question";
 import QuestionCount from "./QuestionCount";

@@ -1,38 +1,100 @@
 [
     {
-        "question": "What is ReactJS?",
+        "question": "What kind of component import React from 'react' is?",
         "answers": [
-            "A Library",
-            "A Framework",
-            "A Module"
+            "stateless component",
+            "statefull component",
+            "pure component"
         ],
-        "correct":"A Library"
+        "correct":"stateless component"
     },
     {
-        "question": "Which Company developed React",
+        "question": "Which of following is used to pass data to a component from outside?",
         "answers": [
-            "Microsoft",
-            "Facebook",
-            "Google"
+            "PropTypes",
+            "setState",
+            "render with arguments",
+            "props"
         ],
-        "correct":"Facebook"
+        "correct":"props"
     },
     {
-        "question": "What are Hooks?",
+        "question": "What function allows you to render React content in an HTML page?",
         "answers": [
-            "Hooks are API with which you can directly use it in functional components",
-            "Hooks can be used in class components only",
-            "Hooks can be used in functional as well as class components"
+            "React.mount()",
+            "ReactDOM.start()",
+            "ReactDOM.render()",
+            "React.render()"
         ],
-        "correct":"Hooks are API with which you can directly use it in functional components"
+        "correct":"ReactDOM.render()"
     },
     {
-        "question": "What are Pure Components",
+        "question": "Arbitrary inputs of components in React are called",
         "answers": [
-            "Pure Components which have their own local state and doesnt re-render if same props or state changes",
-            "Pure components can share state between other components",
-            "Pure components are relative to each other"
+            "Keys",
+            "Props",
+            "Elements",
+            "Ref"
         ],
-        "correct":"Pure Components which have their own local state and doesnt re-render if same props or state changes"
+        "correct":"Props"
+    },
+    {
+        "question": "How many elements does a react component return?",
+        "answers": [
+            "1",
+            "2",
+            "Multiple Elements"
+        ],
+        "correct":"Multiple Elements"
+    },
+    {
+        "question": "How can you access the state of a component from inside of a member function?",
+        "answers": [
+            "this.getState()",
+            "this.prototype.stateValue",
+            "this.state",
+            "this.values"
+        ],
+        "correct":"this.values"
+    },
+    {
+        "question": "At the highest level, React components have lifecycle events that fall into",
+        "answers": [
+            "Initialization",
+            "State/Property Updates",
+            "Destruction",
+            "All of these"
+        ],
+        "correct":"All of these"
+    },
+    {
+        "question": "What is a react.js in MVC?",
+        "answers": [
+            "Controller",
+            "Middleware",
+            "Model",
+            "Router"
+        ],
+        "correct":"Controller"
+    },
+    {
+        "question": "State in react is________",
+        "answers": [
+            "A permanent storage",
+            "Internal storage of the component",
+            "Both of above",
+            "None of above"
+        ],
+        "correct":"Internal storage of the component"
+    },
+    {
+        "question": "For controlled components in react",
+        "answers": [
+            "Source of truth is DOM",
+            "Source of truth is component state",
+            "Source of truth can be anything",
+            "None of above"
+        ],
+        "correct":"Source of truth is component state"
     }
 ]

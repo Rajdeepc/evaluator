@@ -1,0 +1,101 @@
+[
+    {
+        "question": "Which attribute specifies a unique alphanumeric identifier to be associated with an element?",
+        "answers": [
+            "class",
+            "id",
+            "article",
+            "html"
+        ],
+        "correct":"id"
+    },
+    {
+        "question": "The _____________ attribute specifies an inline style associated with an element, which determines the rendering of the affected element.",
+        "answers": [
+            "dir",
+            "style",
+            "class",
+            "article"
+        ],
+        "correct":"style"
+    },
+    {
+        "question": "Which of the following selector selects an element that has no children?",
+        "answers": [
+            ":empty",
+            ":nochild",
+            ":inheritance",
+            ":no-child"
+        ],
+        "correct":"style"
+    },
+    {
+        "question": "Which attribute is used to provide an advisory text about an element or its contents?",
+        "answers": [
+            "tooltip",
+            "dir",
+            "title",
+            "head"
+        ],
+        "correct":"title"
+    },
+
+    {
+        "question": "The __________ attribute sets the text direction as related to the lang attribute.",
+        "answers": [
+            "lang",
+            "sub",
+            "dir",
+            "ds"
+        ],
+        "correct":"dir"
+    },
+    {
+        "question": "Which of the following is the attribute that specifies the column name from the data source object that supplies the bound data?",
+        "answers": [
+            "dataFormatAs",
+            "datafld",
+            "disabled",
+            "datasrc"
+        ],
+        "correct":"datafld"
+    },
+    {
+        "question": "Which of the following is the attribute that specifies additional horizontal space, in pixels, to be reserved on either side of an embedded item like an iframe, applet, image, and so on?",
+        "answers": [
+            "height",
+            "hspace",
+            "hidefocus",
+            "datasrc"
+        ],
+        "correct":"hspace"
+    },
+    {
+        "question": "The accesskey attribute specifies a keyboard navigation accelerator for the element.",
+        "answers": [
+            "True",
+            "False"
+        ],
+        "correct":"True"
+    },
+    {
+        "question": "Which of the following is the attribute that is used to set a global identifier for a microdata item?",
+        "answers": [
+            "key",
+            "id",
+            "itemclass",
+            "itemid"
+        ],
+        "correct":"itemid"
+    },
+    {
+        "question": "Which of the following is the attribute that is used to add a name/value pair to a microdata item?",
+        "answers": [
+            "itemscope",
+            "itemref",
+            "itemprop",
+            "itemid"
+        ],
+        "correct":"itemprop"
+    }
+]

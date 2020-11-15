@@ -1,1 +1,102 @@
-[]
+[
+    {
+        "question": "What is REPL in Node.js?",
+        "answers": [
+            "Loop",
+            "Print",
+            "Eval",
+            "All of these"
+        ],
+        "correct":"All of these"
+    },
+    {
+        "question": "Which of following are a valid form of route path?",
+        "answers": [
+            "regular expressions",
+            "string patterns",
+            "strings",
+            "All of above"
+        ],
+        "correct":"All of above"
+    },
+    {
+        "question": "How Node.js modules are availble externally",
+        "answers": [
+            "module.spread",
+            "module.exports",
+            "module.expose",
+            "None of Above"
+        ],
+        "correct":"module.exports"
+    },
+    {
+        "question": "How many Node object methods are available?",
+        "answers": [
+            "21",
+            "18",
+            "19",
+            "20"
+        ],
+        "correct":"18"
+    },
+    {
+        "question": "Simple or complex functionality organized in a single or multiple JavaScript files which can be reused throughout your Node.js application is called ________.",
+        "answers": [
+            "Library",
+            "Package",
+            "Function",
+            "Module"
+        ],
+        "correct":"Module"
+    },
+    {
+        "question": "Which of the following is true about readable stream?",
+        "answers": [
+            "Readable stream is used for read operation",
+            "Output of readable stream can be input to a writable stream",
+            "Both of the above",
+            "None of the above"
+        ],
+        "correct":"Both of the above"
+    },
+    {
+        "question": "What is the purpose of the Node object property ownerDocument?",
+        "answers": [
+            "Returns the immediate node",
+            "Returns the parent node",
+            "Returns the root element",
+            "Returns the last element"
+        ],
+        "correct":"Returns the root element"
+    },
+    {
+        "question": "Which of the following Node object property returns the node immediately before a node?",
+        "answers": [
+            "localName",
+            "index",
+            "previousSibling",
+            "textContent"
+        ],
+        "correct":"previousSibling"
+    },
+    {
+        "question": "How to test if two nodes are equal?",
+        "answers": [
+            "isEqualNode()",
+            "equal()",
+            "==",
+            "equalto()"
+        ],
+        "correct":"isEqualNode()"
+    },
+    {
+        "question": "Which of the following is the child(s) of the node type EntityReference?",
+        "answers": [
+            "Element",
+            "Text",
+            "Both Element and Text",
+            "Entity"
+        ],
+        "correct":"Both Element and Text"
+    }
+]

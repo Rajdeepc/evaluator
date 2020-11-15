@@ -33,21 +33,43 @@ const QuizWrapper = styled.div`
     }
   }
   .card {
-    box-shadow: 0 1px 1px 0 rgba(159, 167, 194, 0.4);
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     min-height: 140px;
     margin-bottom: 30px;
-    &:hover{
-      background: #4D5592;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    &:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    .coming-soon {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      h4 {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: -14px;
+      }
+    }
+    .img-titile {
+      height: 26px;
+      margin-right: 10px;
+      vertical-align: text-top;
     }
   }
-  .card:hover .card-title h3{ color:#fff}
-  .card-boxes{
-    text-decoration:none
+  .card-boxes {
+    text-decoration: none;
   }
 `;
 
 class QuizComponent extends Component {
-
   getSelectedValues = (objValues) => {
     console.log(objValues);
     // this.setState({
@@ -90,19 +112,49 @@ class QuizComponent extends Component {
               {(quiz || []).map((item) => {
                 return (
                   <Col md="3" key={item.id}>
-                    <Link className="card-boxes" to={`/startquiz/${item.id}`}
-                    >
-                      <Card id={item.id}>
-                        <Card.Body>
-                          <Card.Title>
-                            <h3 className="dark">{item.name}</h3>
-                          </Card.Title>
-                          <Card.Text>
-                            <div className="small light">{item.desc}</div>
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </Link>
+                    <Card id={item.id}>
+                      {!item.id ? (
+                        <div>
+                          <div className="coming-soon">
+                            <h4>Coming Soon...</h4>
+                          </div>
+                          <Card.Body>
+                          <h4 className="dark">
+                            <img
+                              className="img-titile"
+                              src={window.location.origin + item.img}
+                              alt="alternate-image"
+                            />
+                            <span>{item.name}</span>
+                          </h4>
+                          <div className="small light">{item.desc}</div>
+                          </Card.Body>
+                        </div>
+                      ) : (
+                        <Link
+                          className="card-boxes"
+                          to={`/startquiz/${item.id}`}
+                        >
+                          <Card.Body>
+                            <Card.Title>
+                              <div>
+                                <h4 className="dark">
+                                  <img
+                                    className="img-titile"
+                                    src={window.location.origin + item.img}
+                                    alt="alternate-image"
+                                  />
+                                  <span>{item.name}</span>
+                                </h4>
+                              </div>
+                            </Card.Title>
+                            <Card.Text>
+                              <div className="small light">{item.desc}</div>
+                            </Card.Text>
+                          </Card.Body>
+                        </Link>
+                      )}
+                    </Card>
                   </Col>
                 );
               })}

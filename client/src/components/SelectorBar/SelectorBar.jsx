@@ -260,9 +260,9 @@ class SelectorBar extends Component {
                     className="text-left"
                     variant="light"
                     
-                    to='/quiz'
+                    to='/'
                   >
-                    Take Quiz
+                    Start Code Share
                   </Link>
                 </ContributionButtonControl>
                 </InputGroup>

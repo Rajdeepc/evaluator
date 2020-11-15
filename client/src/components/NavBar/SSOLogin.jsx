@@ -7,12 +7,9 @@ import { connect } from "react-redux";
 import GoogleLoginComponent from "../../common-components/GoogleLoginComponent/GoogleLoginComponent";
 import { logoutUser } from "../../common-components/GoogleLoginComponent/GoogleLogin.action";
 
-import SlideDrawerComponent from "../../components/SlideContributor/slideDrawer"
+import SlideDrawerComponent from "../../components/SlideContributor/slideDrawer";
 
 import { getAllApprovedItems } from "../SelectorBar/selectorbar.action";
-
-
-
 
 const SignIn = styled.div`
   float: left;
@@ -87,7 +84,6 @@ const SignInWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-
 
 class SocialSignOn extends React.Component {
   constructor(props) {
@@ -179,6 +175,11 @@ class SocialSignOn extends React.Component {
             </Link>
           </NavComponentStyle>
           <Nav className="navbar-evaluator">
+          <UploadLink inline>
+            <Link  to="/quiz">
+              Start Quiz
+            </Link>
+            </UploadLink>
             <UploadLink inline>
               <Link to="/upload">Upload</Link>
             </UploadLink>
@@ -220,11 +221,11 @@ class SocialSignOn extends React.Component {
             </NavComponentStyle>
           </Nav>
         </Navbar>
-          <SlideDrawerComponent
-            show={this.state.drawerOpen}
-            closeDrawer={this.toCloseDrawer}
-            data={this.props.allApprovedItems}
-          />
+        <SlideDrawerComponent
+          show={this.state.drawerOpen}
+          closeDrawer={this.toCloseDrawer}
+          data={this.props.allApprovedItems}
+        />
       </>
     );
   }
@@ -232,12 +233,12 @@ class SocialSignOn extends React.Component {
 
 const mapStateToProps = (state) => ({
   loginUserState: state.LoginReducer,
-  allApprovedItems: state.SelectorBarReducer.allApprovedItems
+  allApprovedItems: state.SelectorBarReducer.allApprovedItems,
 });
 
 const NavBarConnect = connect(mapStateToProps, {
   logoutUser,
-  getAllApprovedItems
+  getAllApprovedItems,
 })(SocialSignOn);
 
 export { NavBarConnect };
