@@ -27,18 +27,20 @@ Check out the **live demo** -> https://evaluator-app.herokuapp.com/
 
 ## Some Glimpses
 
+### Users can take help of curated questions and answers of all programming languages
+
 <div align="center">
-  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/dashboard.png?raw=true" alt="evaluator-dashboard" width="300"></a>
+  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/dashboard.png?raw=true" alt="evaluator-dashboard" width="400"></a>
 </div>
 
 ### Users can take assessment of any programming languages
 <div align="center">
-  <a href="https://evaluator-app.herokuapp.com/quiz"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/quiz.png?raw=true" alt="evaluator-quiz" width="300"></a>
+  <a href="https://evaluator-app.herokuapp.com/quiz"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/quiz.png?raw=true" alt="evaluator-quiz" width="400"></a>
 </div>
 
 ### Users can take do pair programming
 <div align="center">
-  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/codeshare.png?raw=true" alt="evaluator-quiz" width="300"></a>
+  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/codeshare.png?raw=true" alt="evaluator-quiz" width="400"></a>
 </div>
 
 
