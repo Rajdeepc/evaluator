@@ -13,6 +13,7 @@ class CodeShare extends React.Component {
     this.state = {
       shareTxt: "",
       show: false,
+      videoOn: false,
     };
     this.triggerChange = this.triggerChange.bind(this);
     this.showModal = this.showModal.bind(this);
@@ -20,6 +21,9 @@ class CodeShare extends React.Component {
     this.closeAndGoback = this.closeAndGoback.bind(this);
     this.copyToClipboard = this.copyToClipboard.bind(this);
     this.send = this.send.bind(this);
+    this.streamCamVideo = this.streamCamVideo.bind(this);
+    this.stopVideo = this.stopVideo.bind(this);
+    this.localStream = null;
   }
 
   componentDidMount() {
@@ -42,6 +46,46 @@ class CodeShare extends React.Component {
     });
     const channel = pusher.subscribe(this.id);
     channel.unbind("client-message");
+    this.stopVideo();
+  }
+
+  streamCamVideo() {
+    this.setState(
+      {
+        videoOn: !this.state.videoOn,
+      },
+      () => {
+        console.log(this.state.videoOn);
+        var constraints = { audio: true, video: { width: 300, height: 200 } };
+        const video = document.querySelector("video");
+        if (this.state.videoOn) {
+          video.style.display = 'block';
+          //Start Web Came
+          if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            //use WebCam
+            navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+              this.localStream = stream;
+              video.srcObject = stream;
+              video.play();
+            });
+          }
+        } else {
+          this.stopVideo()
+        }
+      }
+    );
+  }
+
+  stopVideo() {
+    const video = document.querySelector("video");
+   
+    video.pause();
+    video.src = "";
+    video.srcObject = null;
+    video.style.display = 'none';
+    // As per new API stop all streams
+    if (this.localStream)
+      this.localStream.getTracks().forEach((track) => track.stop());
   }
 
   triggerChange(event) {
@@ -130,6 +174,21 @@ class CodeShare extends React.Component {
               </span>
             </span>
           </div>
+          <div id="video-container">
+            <video autoPlay={true} id="videoElement" controls></video>
+          </div>
+          <div className="enable-video">
+            <img
+              onClick={this.streamCamVideo}
+              src={
+                !this.state.videoOn
+                  ? window.location.origin + "/assets/img/no-video.svg"
+                  : window.location.origin + "/assets/img/video-camera.png"
+              }
+              alt="video"
+            /> <b>{ this.state.videoOn ? 'On' : 'OFF'}</b>
+          </div>
+
           <div className="text-center">
             <svg height="20" width="20" className="blinking">
               <circle cx="5" cy="5" r="5" fill="lightgreen" />
