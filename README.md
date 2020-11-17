@@ -28,8 +28,20 @@ Check out the **live demo** -> https://evaluator-app.herokuapp.com/
 ## Some Glimpses
 
 <div align="center">
-  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/dashboard.png?raw=true" alt="evaluator-dashboard" width="100%"></a>
+  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/dashboard.png?raw=true" alt="evaluator-dashboard" width="300"></a>
 </div>
+
+### Users can take assessment of any programming languages
+<div align="center">
+  <a href="https://evaluator-app.herokuapp.com/quiz"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/quiz.png?raw=true" alt="evaluator-quiz" width="300"></a>
+</div>
+
+### Users can take do pair programming
+<div align="center">
+  <a href="https://evaluator-app.herokuapp.com/"><img src="https://github.com/Rajdeepc/evaluator/blob/master/github/codeshare.png?raw=true" alt="evaluator-quiz" width="300"></a>
+</div>
+
+
 
 <br>
 
@@ -43,13 +55,7 @@ Check out the **live demo** -> https://evaluator-app.herokuapp.com/
   * Code Share functionality can help in pair programming with the candidate
   * Any Interviewers can upload any number of questions to the platform which goes through a question filter and typo check by the Admin
  
-## Local Installation to Extend Functionality 🖥
 
-1. Clone the project and navigate to the project root folder;
-2. Install the necessary dependencies for the project execution by running `npm install` in root as well as in client/;
-3. Start the application by running `npm start`;
-4. Open browser in `http://localhost:3600/`;
-5. Run your local MongoDB instances
 
 ## Features 💡
 
