@@ -18,7 +18,7 @@ const App = ({ location }) => {
 
   return (
     <div>
-      {!location.pathname.includes("/startquiz")  && (
+      {!location.pathname.includes("/startquiz") || !location.pathname.includes("/sharecode") && (
         <NavBarConnect getGoogleResponseToParent={getProfileDetails} />
       )}
       <Routes></Routes>

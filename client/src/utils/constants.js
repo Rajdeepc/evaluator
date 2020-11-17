@@ -82,7 +82,7 @@ export const subtopics = [
 
 export const levels = [
   { id: "all", name: "All", value: "all", show: false },
-  { id: "easy", name: "Consultant", value: "easy", show: true },
+  { id: "easy", name: "BTA/Consultant", value: "easy", show: true },
   { id: "medium", name: "Sr Consultant", value: "medium", show: true },
   { id: "hard", name: "Tech Arch", value: "hard", show: true },
 ];

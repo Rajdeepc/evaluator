@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 const mongoose = require("mongoose");
 const path = require("path");
 const dotenv = require("dotenv");
@@ -19,6 +18,7 @@ const getInReviewItems = require("./routes/getReviewItems");
 const updateReviewItems = require("./routes/updateReviewItems");
 const getAllApprovedItems = require("./routes/getAllApproved");
 const updateLikes = require("./routes/updateLikes");
+const pusherMessage = require("./routes/pusherMessage");
 
 // middlewares
 app.use(cors());
@@ -30,6 +30,7 @@ app.use("/getInReviewItems", getInReviewItems);
 app.use("/updateReviewItems", updateReviewItems);
 app.use("/getAllApprovedItems", getAllApprovedItems);
 app.use("/updateLikes", updateLikes);
+app.use("/pusherMessage", pusherMessage);
 
 
 

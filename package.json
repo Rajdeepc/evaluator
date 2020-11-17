@@ -27,6 +27,8 @@
     "mongoose": "^5.2.15",
     "nodemailer": "^4.6.8",
     "nodemailer-smtp-transport": "^2.7.4",
+    "pusher": "^4.0.1",
+    "pusher-js": "^7.0.1",
     "xoauth2": "^1.2.0"
   },
   "devDependencies": {

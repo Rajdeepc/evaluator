@@ -6,6 +6,7 @@ import MyProfileUploadsComponent from "./views/Profile/myprofile.container";
 import AdminComponent from "./views/Admin/AdminComponent";
 import QuizIntroSetup from "./views/Quiz/QuizIntroSetup";
 import QuizDashbaord from "./views/Quiz/QuizDashboard";
+import CodeShare from "./components/CodeShare/CodeShare";
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -23,11 +24,19 @@ const Routes = () => (
         component={MyProfileUploadsComponent}
       />
       <Route path="/admin" component={AdminComponent} />
-     <Route path="/quiz" component={QuizDashbaord} />
-     <Route
+      <Route path="/quiz" component={QuizDashbaord} />
+      <Route
         exact
         path="/startquiz/:topic"
-        component={QuizIntroSetup} hideNavBar={true} />
+        component={QuizIntroSetup}
+        hideNavBar={true}
+      />
+      <Route
+        exact
+        path="/sharecode/:uniqueKey"
+        component={CodeShare}
+        hideNavBar={true}
+      />
     </Switch>
   </main>
 );

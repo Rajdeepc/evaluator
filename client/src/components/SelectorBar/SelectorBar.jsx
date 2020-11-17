@@ -15,6 +15,7 @@ import QuestionAccordian from "../QuestionAccordian/QuestionAccordian";
 import { Link } from "react-router-dom";
 import { levels } from "../../utils/constants";
 import withLoader from "../../common-components/Loader/Loader";
+import { getUniqueId } from '../../utils/commonUtil'
 
 
 const BlogMenu = styled.div`
@@ -259,8 +260,7 @@ class SelectorBar extends Component {
                   <Link
                     className="text-left"
                     variant="light"
-                    
-                    to='/'
+                    to={`/sharecode/${getUniqueId()}`}
                   >
                     Start Code Share
                   </Link>
@@ -290,7 +290,7 @@ class SelectorBar extends Component {
               <Col>
                 <FilterDifficulty>
                   <ul>
-                    {levels.forEach((item) => {
+                    {levels.map((item) => {
                       if (item.show) {
                         return (
                           <li key={item.id}

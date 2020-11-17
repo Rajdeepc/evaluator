@@ -38,8 +38,14 @@ const shuffleArray = (array) => {
   return array;
 };
 
+  // a unique random key generator
+  const getUniqueId = () => {
+    return Math.random().toString(36).substr(2, 9);
+  }
+
 
 export {
+  getUniqueId,
   shuffleArray,
   copyToClipBoard,
   targetElementById,

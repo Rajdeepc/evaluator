@@ -83,16 +83,19 @@ const updateLikesCount = (questionId) => {
   })
 }
 
-// getItemsByLikes(topic_name){
-//   const url = `http://localhost:3000/itemsByLikes/${topic_name}`;
-//   return axios.get(url).then(response => {
-//     return response.data;
-//   });
-// },
 
+const pusherMessage = (payloadObj) => {
+  const body = payloadObj;
+  const url = BASE_URL + API_ENDPOINTS.pusherMessage;
+   return axios.post(url,body)
+   .then(response => {
+     return response.data
+   })
+}
 
 
 export default {
+  pusherMessage,
   updateLikesCount,
   submitContent,
   getQuestions,

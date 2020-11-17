@@ -52,7 +52,8 @@ const API_ENDPOINTS = {
   getInReviewItems:'/getInReviewItems/',
   updateReviewItems: '/updateReviewItems',
   getAllApprovedItems:'/getAllApprovedItems',
-  updateLikes:'/updateLikes'
+  updateLikes:'/updateLikes',
+  pusherMessage:'/pusherMessage'
 };
 
 export { BASE_URL, API_ENDPOINTS };
