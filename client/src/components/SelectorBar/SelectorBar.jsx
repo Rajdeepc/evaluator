@@ -109,25 +109,25 @@ const FilterDifficulty = styled.div`
 `;
 
 const ContributionButtonControl = styled.div`
-  a {
-    box-shadow: none;
-    border: none;
-    font: 14px;
-    padding: 4px 15px;
-    -webkit-letter-spacing: 5px;
-    -moz-letter-spacing: 5px;
-    -ms-letter-spacing: 5px;
-    letter-spacing: none;
-    color: white;
-    border: solid 2px transparent;
-    border-image: linear-gradient(45deg,#ca203e,#144356);
-    border-image-slice: 1;
-    background: linear-gradient(45deg,#d8445e,#1b9bd0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display:block;
-  }
+.btn-grad {background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+.btn-grad {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 6px;
+  display: block;
+  font-size: 13px;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
 `;
 
 class SelectorBar extends Component {
@@ -258,7 +258,7 @@ class SelectorBar extends Component {
                 <InputGroup>
                 <ContributionButtonControl>
                   <Link
-                    className="text-left"
+                    className="btn-grad"
                     variant="light"
                     to={`/sharecode/${getUniqueId()}`}
                   >

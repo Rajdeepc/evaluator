@@ -1,14 +1,52 @@
-
-.share-code header{
+.share-code header {
   text-align: center;
 }
-.doc{
-    padding:30px;
+.doc {
+  padding: 30px;
+}
+.doc #text-editor {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px 28px;
+  min-height: calc(100vh - 68px);
+  background: #fff;
+  border-color: #ccc;
+  border-radius: 6px;
+}
+
+.blinking {
+  -webkit-animation: 1s blink ease infinite;
+  -moz-animation: 1s blink ease infinite;
+  -ms-animation: 1s blink ease infinite;
+  -o-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;
+  height: 10px;
+  width: 10px;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 0;
   }
-  .doc #text-editor {
-    width: 100%;
-    margin-top:20px;
-    padding: 20px 28px;
-    min-height: calc(100vh - 68px);
-    background: #fff;
+  50% {
+    opacity: 1;
   }
+}
+
+.share-link input {
+  height: 36px;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  background: #fff;
+}
+.share-link .btn {
+  height: 36px;
+  padding: 0px 10px;
+  margin: 0px;
+  border: 0px;
+  position: relative;
+  top: -1px;
+}
