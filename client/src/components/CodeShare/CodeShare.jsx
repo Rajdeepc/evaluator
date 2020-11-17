@@ -4,6 +4,7 @@ import "./codeshare.css";
 import DataCallApi from "../../utils/api";
 import { PUSHER_CLUSTER, PUSHER_KEY } from "../../utils/constants";
 import { Modal, Button } from "react-bootstrap";
+import { DebounceInput } from "react-debounce-input";
 
 class CodeShare extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class CodeShare extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.closeAndGoback = this.closeAndGoback.bind(this);
     this.copyToClipboard = this.copyToClipboard.bind(this);
+    this.send = this.send.bind(this);
   }
 
   componentDidMount() {
@@ -25,12 +27,21 @@ class CodeShare extends React.Component {
       cluster: PUSHER_CLUSTER,
     });
 
-    const getEditor = document.getElementById("text-editor");
     const channel = pusher.subscribe(this.id);
 
-    channel.bind("message", (html) => {
-      getEditor.innerHTML = html;
+    channel.bind("client-message", (html) => {
+      this.setState({
+        shareTxt: html,
+      });
     });
+  }
+
+  componentWillUnmount() {
+    const pusher = new Pusher(PUSHER_KEY, {
+      cluster: PUSHER_CLUSTER,
+    });
+    const channel = pusher.subscribe(this.id);
+    channel.unbind("client-message");
   }
 
   triggerChange(event) {
@@ -39,16 +50,19 @@ class CodeShare extends React.Component {
         shareTxt: event.target.value,
       },
       () => {
-        const payload = {
-          message: this.state.shareTxt,
-          uniqueId: this.id,
-        };
-
-        DataCallApi.pusherMessage(payload).then((response) => {
-          console.log(response);
-        });
+        this.send();
       }
     );
+  }
+
+  send() {
+    const payload = {
+      message: this.state.shareTxt,
+      uniqueId: this.id,
+    };
+    DataCallApi.pusherMessage(payload).then((response) => {
+      console.log(response);
+    });
   }
 
   showModal() {
@@ -74,13 +88,11 @@ class CodeShare extends React.Component {
     );
   }
 
-
   copyToClipboard() {
-    console.log(this.refs.input)
+    console.log(this.refs.input);
     this.refs.input.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
   }
-
 
   render() {
     return (
@@ -105,7 +117,11 @@ class CodeShare extends React.Component {
             <span className="share-link">
               <span>
                 Share link:{" "}
-                <input ref="input" disabled value={window.location.href}></input>
+                <input
+                  ref="input"
+                  disabled
+                  value={window.location.href}
+                ></input>
               </span>
               <span>
                 <Button variant="primary" onClick={this.copyToClipboard}>
@@ -121,14 +137,14 @@ class CodeShare extends React.Component {
             </svg>{" "}
             You session is live
           </div>
-          <textarea
-            placeholder="// Start typing your code here."
+          <DebounceInput
+            element="textarea"
+            minLength={2}
             id="text-editor"
-            className="language-javascript"
             value={this.state.shareTxt}
+            debounceTimeout={300}
             onChange={this.triggerChange}
-            padding={10}
-          ></textarea>
+          />
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

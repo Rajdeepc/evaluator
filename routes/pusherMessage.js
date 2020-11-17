@@ -13,7 +13,7 @@ const pusher = new Pusher({
 router.post("/", async (req, res) => {
   const payload = req.body.message;
   const uniqueKeyParam = req.body.uniqueId;
-  pusher.trigger(uniqueKeyParam, "message", payload);
+  pusher.trigger(uniqueKeyParam, "client-message", payload);
   res.send(payload);
 });
 

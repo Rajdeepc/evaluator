@@ -15,6 +15,7 @@
     "pusher-js": "^7.0.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
+    "react-debounce-input": "^3.2.3",
     "react-dom": "^16.8.6",
     "react-draft-wysiwyg": "^1.13.2",
     "react-facebook-login": "^4.1.1",
