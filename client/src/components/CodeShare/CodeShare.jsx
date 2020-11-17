@@ -2,6 +2,11 @@ import React from "react";
 import Pusher from "pusher-js";
 import "./codeshare.css";
 import DataCallApi from "../../utils/api";
+import { PUSHER_CLUSTER , PUSHER_KEY } from '../../utils/constants';
+import { Link } from "react-router-dom";
+
+
+
 
 class CodeShare extends React.Component {
   constructor(props) {
@@ -14,8 +19,8 @@ class CodeShare extends React.Component {
   }
 
   componentDidMount() {
-    const pusher = new Pusher("c43c5ce3243819bb058e", {
-      cluster: "mt1",
+    const pusher = new Pusher(PUSHER_KEY, {
+      cluster: PUSHER_CLUSTER,
     });
 
     const getEditor = document.getElementById("text-editor");
@@ -51,7 +56,7 @@ class CodeShare extends React.Component {
         <header>
           <div className="row">
             <div className="col-md-6 text-left"><h3>Online Code Share Room</h3></div>
-            <div className="col-md-6 text-right"><button className="btn btn-danger">End Session</button></div>
+            <div className="col-md-6 text-right"><Link to='/' className="btn btn-danger">End Session</Link></div>
           </div>
         </header>
        

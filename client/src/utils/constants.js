@@ -146,6 +146,11 @@ export const quiz = [
   }
 ];
 
+export const PUSHER_KEY = "c43c5ce3243819bb058e"
+export const PUSHER_CLUSTER = 'mt1';
+
+
+
 export default {
   topics,
   subtopics,
