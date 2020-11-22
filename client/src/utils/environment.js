@@ -53,7 +53,8 @@ const API_ENDPOINTS = {
   updateReviewItems: '/updateReviewItems',
   getAllApprovedItems:'/getAllApprovedItems',
   updateLikes:'/updateLikes',
-  pusherMessage:'/pusherMessage'
+  pusherMessage:'/pusherMessage',
+  updateLeaderBoard:'/updateLeaderBoard'
 };
 
 export { BASE_URL, API_ENDPOINTS };

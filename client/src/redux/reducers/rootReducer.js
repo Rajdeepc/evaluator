@@ -5,7 +5,8 @@ import HomeReducer from '../../views/Home/home.reducer';
 import ProfileReducer from '../../views/Profile/myprofile.reducer';
 import AdminReducer from '../../views/Admin/admin.reducer';
 import SelectorBarReducer from '../../components/SelectorBar/selectorbar.reducer';
-import LoginReducer from '../../common-components/GoogleLoginComponent/GoogleLogin.reducer'
+import LoginReducer from '../../common-components/GoogleLoginComponent/GoogleLogin.reducer';
+import QuizLeaderBoardReducer from '../../views/Quiz/quiz.reducer'
 /** import your reducers */
 
 export default combineReducers({
@@ -14,5 +15,6 @@ export default combineReducers({
     HomeReducer,
     ProfileReducer,
     AdminReducer,
-    SelectorBarReducer
+    SelectorBarReducer,
+    QuizLeaderBoardReducer
 })

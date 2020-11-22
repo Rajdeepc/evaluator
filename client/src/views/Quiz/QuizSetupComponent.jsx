@@ -6,6 +6,8 @@ import Result from "./Results";
 import "./Quiz.css";
 import styled from "styled-components";
 import TimeNavbar from "../../components/TimeNavbar/TimeNavbar";
+import {updateLeaderBoard} from './quiz.action'
+import { connect } from 'react-redux';
 
 const QuizAppWrapper = styled.div`
   .navbar {
@@ -53,7 +55,6 @@ function QuizSetupComponent({ quizTopic, ...props }) {
   useEffect(() => {
     async function getTopicQuestions(){
       const response = await getQuestionsData(quizTopic);
-      console.log(response)
       setSelectedQuestionSet(response);
     }
     getTopicQuestions()
@@ -100,6 +101,18 @@ function QuizSetupComponent({ quizTopic, ...props }) {
           result: result,
         };
       });
+      const quizObj = {
+        quizName:quizTopic,
+        quizId: quizTopic,
+        highest_score: result
+      }
+       // after setting results store in db for leaderboard
+       const emailIfFromSession =
+       sessionStorage.getItem("userData") &&
+       JSON.parse(sessionStorage.getItem("userData")).email;
+
+
+       props.updateLeaderBoard(emailIfFromSession,quizObj)
     } else {
       setQuizState((prevState) => {
         return {
@@ -219,7 +232,16 @@ QuizSetupComponent.propTypes = {
   question: PropTypes.string.isRequired,
   questionId: PropTypes.number.isRequired,
   questionTotal: PropTypes.number.isRequired,
-  onAnswerSelected: PropTypes.func.isRequired,
+  onAnswerSelected: PropTypes.func.isRequired
 };
 
-export default QuizSetupComponent;
+const mapStateToProps = (state) => ({
+    loginUserDetails: state.LoginReducer.loggedInUserDetails
+})
+
+
+const QuizSetUpContainer = connect(mapStateToProps, {
+  updateLeaderBoard
+})(QuizSetupComponent)
+
+export default QuizSetUpContainer;

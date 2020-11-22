@@ -94,7 +94,21 @@ const pusherMessage = (payloadObj) => {
 }
 
 
+const updateLeaderBoard = (email, payloadObj) => {
+  const body = {
+    email: email,
+    payload: payloadObj
+  };
+  const url = BASE_URL + API_ENDPOINTS.updateLeaderBoard;
+  return axios.put(url,body)
+  .then(response => {
+    return response.data
+  })
+}
+
+
 export default {
+  updateLeaderBoard,
   pusherMessage,
   updateLikesCount,
   submitContent,
