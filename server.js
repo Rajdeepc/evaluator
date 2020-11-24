@@ -20,6 +20,8 @@ const getAllApprovedItems = require("./routes/getAllApproved");
 const updateLikes = require("./routes/updateLikes");
 const pusherMessage = require("./routes/pusherMessage");
 const updateLeaderBoard = require("./routes/updateLeaderBoard");
+const getLeaderBoardList = require("./routes/getLeaderBoardList");
+
 
 // middlewares
 app.use(cors());
@@ -33,6 +35,7 @@ app.use("/getAllApprovedItems", getAllApprovedItems);
 app.use("/updateLikes", updateLikes);
 app.use("/pusherMessage", pusherMessage);
 app.use("/updateLeaderBoard", updateLeaderBoard);
+app.use("/getLeaderBoardList", getLeaderBoardList);
 
 
 

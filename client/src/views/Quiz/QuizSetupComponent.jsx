@@ -106,13 +106,18 @@ function QuizSetupComponent({ quizTopic, ...props }) {
         quizId: quizTopic,
         highest_score: result
       }
-       // after setting results store in db for leaderboard
-       const emailIfFromSession =
-       sessionStorage.getItem("userData") &&
-       JSON.parse(sessionStorage.getItem("userData")).email;
+
+      const emailId = sessionStorage.getItem("userData") && JSON.parse(sessionStorage.getItem("userData")).email;
+
+       const profileObj = {
+         username: sessionStorage.getItem("userData") && JSON.parse(sessionStorage.getItem("userData")).username,
+         userImg: sessionStorage.getItem("userData") && JSON.parse(sessionStorage.getItem("userData")).userImg
+       }
 
 
-       props.updateLeaderBoard(emailIfFromSession,quizObj)
+       props.updateLeaderBoard(emailId,profileObj, quizObj);
+
+
     } else {
       setQuizState((prevState) => {
         return {

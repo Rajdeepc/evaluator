@@ -54,7 +54,8 @@ const API_ENDPOINTS = {
   getAllApprovedItems:'/getAllApprovedItems',
   updateLikes:'/updateLikes',
   pusherMessage:'/pusherMessage',
-  updateLeaderBoard:'/updateLeaderBoard'
+  updateLeaderBoard:'/updateLeaderBoard',
+  getLeaderBoardList:'/getLeaderBoardList'
 };
 
 export { BASE_URL, API_ENDPOINTS };

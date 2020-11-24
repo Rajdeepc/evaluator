@@ -94,10 +94,11 @@ const pusherMessage = (payloadObj) => {
 }
 
 
-const updateLeaderBoard = (email, payloadObj) => {
+const updateLeaderBoard = (email, profileObj, payloadObj) => {
   const body = {
-    email: email,
-    payload: payloadObj
+    email:email,
+    profile: profileObj,
+    quiz: payloadObj
   };
   const url = BASE_URL + API_ENDPOINTS.updateLeaderBoard;
   return axios.put(url,body)
@@ -107,7 +108,17 @@ const updateLeaderBoard = (email, payloadObj) => {
 }
 
 
+const getLeaderBoardList = () => {
+  const url = BASE_URL + API_ENDPOINTS.getLeaderBoardList;
+  return axios.get(url)
+  .then(resp => {
+    return resp.data
+  })
+}
+
+
 export default {
+  getLeaderBoardList,
   updateLeaderBoard,
   pusherMessage,
   updateLikesCount,

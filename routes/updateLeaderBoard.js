@@ -3,11 +3,15 @@ const router = express.Router();
 const { QuizModel } = require("../models/quizModel");
 
 router.put("/", async (req, res) => {
-  let email_id = req.body.email;
-  let objTobeUpdated = req.body.payload;
-  const query = { email_id : email_id};
-  const update = { $addToSet: { quiz: objTobeUpdated } };
+  let email = req.body.email;
+
+  let quiz = req.body.quiz;
+
+  const query = { email : email};
+
+  const update = { $addToSet: { quiz: quiz }, $set :{profile: req.body.profile} };
   const options = { upsert:  true, new: true}
+
   QuizModel.findOneAndUpdate(
     query, update, options,
     (err, data) => {

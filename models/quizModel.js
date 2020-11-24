@@ -7,24 +7,35 @@ const mongoose = require("mongoose");
 const QuizModel = mongoose.model(
   "QuizModel",
   new mongoose.Schema({
-    email_id: { type: String },
+    email: {
+      type: String,
+      required: true
+    },
+    profile: {
+      type: Object,
+      username: {
+        type: String,
+      },
+      userImg: {
+        type: String,
+      },
+    },
     quiz: {
-        type: Array,
-        quizName: {
-            type: String,
-            required: true
-        },
-        quizId: {
-            type: String,
-            
-        },
-        highest_score: {
-            type: Number
-        },
-        last_updated: {
-            type: String
-        }
-     }
+      type: Array,
+      quizName: {
+        type: String,
+        required: true,
+      },
+      quizId: {
+        type: String,
+      },
+      highest_score: {
+        type: Number,
+      },
+      last_updated: {
+        type: String,
+      },
+    },
   })
 );
 

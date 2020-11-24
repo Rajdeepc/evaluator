@@ -3,15 +3,17 @@ import { Jumbotron, Card, Row, Col, Button, Container } from "react-bootstrap";
 import { quiz } from "../../utils/constants";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
+import { getLeaderBoardList } from "./quiz.action";
+import { connect } from "react-redux";
 
 const QuizWrapper = styled.div`
-  .jumbotron {
-    padding: 4rem 2rem;
+  .bg-white {
     background: #fff;
-    img {
-      height: 200px;
-    }
   }
+  .bg-grey{
+    background:#e6e6e6
+  }
+  padding: 0px 15px;
   .track-cards {
     > h3 {
       font-weight: lighter;
@@ -69,39 +71,102 @@ const QuizWrapper = styled.div`
   }
 `;
 
+const HeroBanner = styled.div`
+  padding: 40px 45px;
+  background: white;
+  .quiz-image {
+    img {
+      width: 100%;
+    }
+  }
+`;
+
+const LeaderBoard = styled.div`
+  overflow: auto;
+  max-height: 340px;
+  padding-top: 16px;
+  h3{
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+`;
+const LeaderItem = styled.div`
+  margin-bottom: 20px;
+  background:#fff;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.11);
+  border-radius:6px;
+  padding: 8px;
+  img{
+    height: 50px;
+    border-radius: 32px;
+  }
+  .email{
+    font-size: 12px;
+    margin-top: 4px;
+  }
+`;
+
 class QuizComponent extends Component {
-  getSelectedValues = (objValues) => {
-    console.log(objValues);
-    // this.setState({
-    //   topicSelectValue: objValues.selectedTopic,
-    //   category: objValues.selectedCategory,
-    // });
-  };
+  componentDidMount() {
+    this.props.getLeaderBoardList();
+  }
+
+  UNSAFE_componentWillReceiveProps() {
+    console.log(this.props.allLeaderBoardList);
+  }
 
   render() {
     return (
       <QuizWrapper>
-        <Jumbotron>
-          <Container>
-            <Row>
-              <Col>
-                <h1>Assessment</h1>
-                <p>Select and choose any topic and take your assessment</p>
-                <p>
-                  <Button variant="primary">Learn more</Button>
-                </p>
-              </Col>
-              <Col>
-                <div className="text-right">
-                  <img
-                    src={window.location.origin + "/assets/img/allquiz.svg"}
-                    alt=""
-                  />
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </Jumbotron>
+        <Row>
+          <Col md="8" className="bg-white">
+            <HeroBanner>
+              <Row>
+                <Col md="6">
+                  <h1>Assessment</h1>
+                  <p>Select and choose any topic and take your assessment</p>
+                  <p>
+                    <Button variant="primary">Learn more</Button>
+                  </p>
+                </Col>
+                <Col md="6">
+                  <div className="quiz-image">
+                    <img
+                      src={window.location.origin + "/assets/img/allquiz.svg"}
+                      alt=""
+                    />
+                  </div>
+                </Col>
+              </Row>
+            </HeroBanner>
+          </Col>
+          <Col md="4" className="bg-grey">
+            {this.props.allLeaderBoardList && this.props.allLeaderBoardList.length > 0 &&
+            <LeaderBoard>
+              <h3>Leaderboard</h3>
+              {(this.props.allLeaderBoardList || []).map((item,i) => {
+                return (
+                  <LeaderItem>
+                    <Row>
+                      <Col md="2">
+                      <img src={item.profile.userImg} alt=""/>
+                      </Col>
+                      <Col md="8">
+                        <div>{item.profile.username}</div>
+                        <div className="email">{item.email}</div>
+                      </Col>
+                      <Col md="2" className='text-center'>
+                        {i + 1}
+                      </Col>
+                      </Row>
+                  </LeaderItem>
+                );
+              })}
+            </LeaderBoard>
+  }
+          </Col>
+        </Row>
+
         <Container>
           <div className="track-cards">
             <h3>Programming Assessment Quiz</h3>
@@ -119,15 +184,15 @@ class QuizComponent extends Component {
                             <h4>Coming Soon...</h4>
                           </div>
                           <Card.Body>
-                          <h4 className="dark">
-                            <img
-                              className="img-titile"
-                              src={window.location.origin + item.img}
-                              alt="alternate-image"
-                            />
-                            <span>{item.name}</span>
-                          </h4>
-                          <div className="small light">{item.desc}</div>
+                            <h4 className="dark">
+                              <img
+                                className="img-titile"
+                                src={window.location.origin + item.img}
+                                alt="alternate-image"
+                              />
+                              <span>{item.name}</span>
+                            </h4>
+                            <div className="small light">{item.desc}</div>
                           </Card.Body>
                         </div>
                       ) : (
@@ -166,4 +231,12 @@ class QuizComponent extends Component {
   }
 }
 
-export default withRouter(QuizComponent);
+const mapStateToProps = (state) => ({
+  allLeaderBoardList: state.QuizLeaderBoardReducer.getLeaderBoardList,
+});
+
+const QuizComponentContainer = connect(mapStateToProps, {
+  getLeaderBoardList,
+})(QuizComponent);
+
+export default withRouter(QuizComponentContainer);
