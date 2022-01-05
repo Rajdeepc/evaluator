@@ -15,7 +15,7 @@
 </p>
 
 
-Check out the **live demo** -> https://evaluator-app.herokuapp.com/
+Check out the **live demo** -> http://www.practiceinterviews.tech/
 
  ## Support My Work
 
